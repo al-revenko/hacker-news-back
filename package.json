@@ -1,0 +1,46 @@
+{
+  "name": "hacker-news-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/index.ts",
+    "dev": "nodemon -r tsconfig-paths/register src/index.ts",
+    "lint": "yarn lint:eslint & yarn lint:prettier",
+    "fix": "yarn fix:eslint & yarn fix:prettier",
+    "lint:prettier": "prettier --check .",
+    "fix:prettier": "prettier --write .",
+    "lint:eslint": "eslint --ext .ts, .",
+    "fix:eslint": "eslint --ext .ts, . --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "reflect-metadata": "^0.2.2",
+    "routing-controllers": "^0.10.4",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.11",
+    "@types/node": "^20.14.10",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-unicorn": "^41.0.0",
+    "nodemon": "^3.1.4",
+    "prettier": "^2.3.2"
+  }
+}
