@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register src/index.ts",
     "dev": "nodemon -r tsconfig-paths/register src/index.ts",
-    "docker:build": "docker build -t hacker-news-back .",
+    "docker:build": "docker build -t sasharevenko/hacker-news-backend .",
     "lint": "yarn lint:eslint & yarn lint:prettier",
     "fix": "yarn fix:eslint & yarn fix:prettier",
     "lint:prettier": "prettier --check .",
