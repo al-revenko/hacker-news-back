@@ -18,6 +18,14 @@ git clone -b feature https://github.com/al-revenko/hacker-news-back.git
 yarn
 ```
 
+#### Создаём .env файл в корне проекта и копируем в него содержимое файла .env.example:
+
+```bash
+API_URL = "https://api.hnpwa.com/v0/" 
+HOST = "localhost"
+PORT = "4000"
+```
+
 ## Запуск dev сервера
 
 ```bash
