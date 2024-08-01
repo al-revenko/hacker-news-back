@@ -4,12 +4,15 @@ import { axiosInst } from '@/libs/axios.lib';
 import { isOk } from '@/guards/isOk.quard';
 
 export async function getAllFeed(category: FeedCategory, count: number = 0): Promise<FeedItem[]> {
-  const pagesByCount =
-    count <= 0
-      ? API_CONSTRAINTS.maxPageCount[category]
-      : count >= API_CONSTRAINTS.articlesPerPage
-      ? Math.ceil(count / API_CONSTRAINTS.articlesPerPage)
-      : 1;
+  let pagesByCount: number;
+
+  if (count <= 0) {
+    pagesByCount = API_CONSTRAINTS.maxPageCount[category];
+  } else if (count >= API_CONSTRAINTS.articlesPerPage) {
+    pagesByCount = Math.ceil(count / API_CONSTRAINTS.articlesPerPage);
+  } else {
+    pagesByCount = 1;
+  }
 
   const pageCount =
     pagesByCount <= API_CONSTRAINTS.maxPageCount[category] ? pagesByCount : API_CONSTRAINTS.maxPageCount[category];

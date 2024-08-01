@@ -21,7 +21,7 @@ yarn
 #### Создаём .env файл в корне проекта и копируем в него содержимое файла .env.example:
 
 ```bash
-API_URL = "https://api.hnpwa.com/v0/" 
+API_URL = "https://api.hnpwa.com/v0/"
 HOST = "localhost"
 PORT = "4000"
 ```
@@ -31,4 +31,3 @@ PORT = "4000"
 ```bash
 yarn dev
 ```
-
