@@ -14,8 +14,7 @@ export async function getAllFeed(category: FeedCategory, count: number = 0): Pro
     pagesByCount = 1;
   }
 
-  const pageCount =
-    pagesByCount <= API_CONSTRAINTS.maxPageCount[category] ? pagesByCount : API_CONSTRAINTS.maxPageCount[category];
+  const pageCount = Math.min(pagesByCount, API_CONSTRAINTS.maxPageCount[category]);
 
   const feedList: FeedItem[] = [];
 
