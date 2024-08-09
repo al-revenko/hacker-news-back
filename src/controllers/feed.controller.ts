@@ -6,10 +6,10 @@ import { isFeedCategory } from '@/guards/isFeedCategory.quard';
 @JsonController('/feed')
 export class FeedController {
   @Get('/news')
-  @Get('/newest/')
-  @Get('/ask/')
-  @Get('/show/')
-  @Get('/jobs/')
+  @Get('/newest')
+  @Get('/ask')
+  @Get('/show')
+  @Get('/jobs')
   async getFeed(@Req() req: Request, @QueryParam('count', { type: Number }) count: number) {
     const category = req.path.split('/')[2];
 

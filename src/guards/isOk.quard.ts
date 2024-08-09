@@ -1,9 +1,3 @@
-import { AxiosResponse } from 'axios';
-
-export function isOk<R extends AxiosResponse>(res: R): boolean {
-  if (res.status >= 200 && res.status <= 399) {
-    return true;
-  }
-
-  return false;
+export function isOk(code: number): boolean {
+  return code >= 200 && code <= 399;
 }

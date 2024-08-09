@@ -1,7 +1,6 @@
-import { FeedCategory, FeedItem } from 'types/api.type';
 import { API_CONSTRAINTS } from '@/consts/apiConstraints.const';
 import { axiosInst } from '@/libs/axios.lib';
-import { isOk } from '@/guards/isOk.quard';
+import { FeedCategory, FeedItem } from '@/types/api.type';
 
 export async function getAllFeed(category: FeedCategory, count: number = 0): Promise<FeedItem[]> {
   let pagesByCount: number;
@@ -21,7 +20,7 @@ export async function getAllFeed(category: FeedCategory, count: number = 0): Pro
   for (let page = 1; page <= pageCount; page++) {
     const res = await axiosInst.get<FeedItem[]>(`${category}/${page}.json`);
 
-    if (isOk(res) && Array.isArray(res.data)) {
+    if (Array.isArray(res.data)) {
       feedList.push(...res.data);
     }
   }
